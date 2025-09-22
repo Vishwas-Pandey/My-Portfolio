@@ -62,7 +62,7 @@ export const myProjects = [
     desc: 'Bug Buster is a fast-paced web-based typing game built with React and Tailwind CSS. Players type falling words to “eliminate” bugs, earning points while avoiding misses. The game features animations, sound effects, scoring, lives, and pause/resume functionality for an engaging experience.',
     subdesc:
       'Built with React and Tailwind CSS, it features smooth animations, score & lives tracking, pause/resume, and polished sound effects—showcasing your web dev proficiency and attention to UX.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+    href: 'https://github.com/Vishwas-Pandey/Type-Strike',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -82,24 +82,14 @@ export const myProjects = [
         name: 'TailwindCSS',
         path: 'assets/tailwindcss.png',
       },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    title: 'Apple Clone – Modern UI Website',
+    desc: 'Apple Clone is a sleek, responsive web project replicating the modern look and feel of Apple’s official website. Built with React.js, Vite, and TailwindCSS, it showcases smooth layouts, elegant typography, and responsive design principles. The project emphasizes minimalism, interactivity, and performance-driven UI development.',
     subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+      'A front-end clone crafted for practice and portfolio demonstration. Perfect for showcasing web design skills and modern UI development.',
+    href: 'https://github.com/Vishwas-Pandey/Apple-Clone',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
@@ -118,16 +108,6 @@ export const myProjects = [
         id: 2,
         name: 'TailwindCSS',
         path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
       },
     ],
   },
@@ -171,11 +151,11 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+    title: 'hate Speech Detection',
+    desc: 'A machine learning model designed to automatically detect and classify hate speech in text data. It helps identify offensive, abusive, or harmful content across social media platforms and online forums. The model leverages natural language processing techniques for accurate content moderation.',
     subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+      'Built using Python and popular ML libraries, the model preprocesses text, extracts features, and classifies messages into hate speech or safe content. It can be integrated into web apps or social media tools for real-time moderation.',
+    href: 'https://github.com/Vishwas-Pandey/Hate-Speech-Detection',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -208,10 +188,10 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+    title: 'Binary Tree Visualizer',
+    desc: 'An interactive and educational tool that visually represents binary trees, allowing users to explore and understand tree structures in a dynamic way. It demonstrates key operations such as insertion, deletion, and different traversal methods with real-time animations. This visualizer is ideal for students, educators, and coding enthusiasts looking to strengthen their understanding of data structures through hands-on experience.',
     subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
+      'The tool allows users to input custom trees or use predefined examples, providing step-by-step visualization of how each operation affects the tree. It makes complex concepts in binary trees accessible and engaging for learners of all levels.',
     href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
@@ -260,28 +240,31 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
+    name: 'Jabsz Gaming Studio',
+    pos: 'Front End Developer',
+    duration: 'May 2025 - July 2025',
+    title:
+      'Worked as a Frontend Developer on Color Dash, a real-time reaction speed game, developing responsive UI components with React.js and TailwindCSS, and integrating smooth animations with Framer Motion to enhance gameplay experience.',
     icon: '/assets/framer.svg',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Figma',
+    name: 'Prodigy Infotech',
     pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
+    duration: 'May 2024 - June 2024',
+    title:
+      'Contributed to the development of responsive web applications, creating dynamic and interactive features to improve user experience. Worked on building scalable frontend components, integrating APIs, and optimizing performance while adhering to best coding practices in a collaborative team environment.',
     icon: '/assets/figma.svg',
     animation: 'clapping',
   },
   {
     id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
+    name: 'CodSoft',
+    pos: 'Web Developer',
+    duration: 'May 2024 - June 2024',
+    title:
+      'Developed responsive and interactive web pages using HTML, CSS, and JavaScript, implementing dynamic UI components and user-friendly interfaces while ensuring cross-browser compatibility and smooth performance.',
     icon: '/assets/notion.svg',
     animation: 'salute',
   },
