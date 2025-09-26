@@ -1,64 +1,60 @@
 // src/components/ChatBot.jsx
 
 import { useState, useRef, useEffect } from 'react';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { myData } from '../constants/myData';
+import { myData } from '../constants/myData'; // Your personal data
 import ReactMarkdown from 'react-markdown';
-
-// Get the API key from environment variables
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
-    { text: "Hi! I'm Vishwas's AI assistant. Ask me about his skills, projects, or experience!", isUser: false },
+    { text: "Hi! I'm Vishwas's assistant. Ask me about my skills, projects, or experience!", isUser: false },
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const chatBoxRef = useRef(null);
 
-  // --- Gemini API Call Logic ---
-  const runChat = async (userInput) => {
-    setIsLoading(true);
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  // --- This is the complete, improved rule-based logic ---
+  const getStaticResponse = (userInput) => {
+    const query = userInput.toLowerCase();
 
-    // This is the crucial system prompt that guides the AI
-    const systemPrompt = `
-      You are 'VishwasAI', a personal AI assistant for Vishwas Pandey's portfolio website. Your ONLY purpose is to answer questions about Vishwas based on the provided JSON data.
-
-      **RULES:**
-      1.  **Source of Truth:** Use ONLY the structured JSON data provided below to answer questions. Do not use any external knowledge.
-      2.  **Strict Relevance:** If the user asks about anything not related to Vishwas, you MUST politely decline. Respond with something like: "I am an AI assistant for Vishwas Pandey's portfolio. I can only answer questions about his skills, projects, and experience."
-      3.  **No Fabrication:** If the data does not contain the answer to a specific question about Vishwas, state that you don't have that information.
-      4.  **Tone & Style:** Be professional, concise, and helpful. When listing items like skills or projects, use bullet points for readability.
-
-      Here is the data about Vishwas Pandey:
-      ${JSON.stringify(myData)}
-    `;
-
-    try {
-      const chat = model.startChat({
-        history: [{ role: 'user', parts: [{ text: systemPrompt }] }],
-        generationConfig: { maxOutputTokens: 500 },
-      });
-
-      const result = await chat.sendMessage(userInput);
-      const response = await result.response;
-      const text = response.text();
-
-      const botMessage = { text, isUser: false };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error('Gemini API Error:', error);
-      const errorMessage = {
-        text: "Sorry, I'm having trouble connecting right now. Please try again later.",
-        isUser: false,
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
+    // Specific Project Checks (Now includes tech stack in the response)
+    if (query.includes('color dash') || query.includes('reaction game')) {
+      const project = myData.projects.find((p) => p.id === 'color-dash');
+      return `${project.description}\n\n**Tech used:** ${project.tech.join(', ')}`;
     }
+    if (query.includes('hate speech')) {
+      const project = myData.projects.find((p) => p.id === 'hate-speech-detection');
+      return `${project.description}\n\n**Tech used:** ${project.tech.join(', ')}`;
+    }
+    if (query.includes('binary tree') || query.includes('visualizer')) {
+      const project = myData.projects.find((p) => p.id === 'binary-tree-visualizer');
+      return `${project.description}\n\n**Tech used:** ${project.tech.join(', ')}`;
+    }
+
+    // General Keyword Checks
+    if (query.includes('skill') || query.includes('tech') || query.includes('know')) {
+      const skillsText = `Vishwas is skilled in:\n- **Languages:** ${myData.tech_stack.languages.join(', ')}\n- **Frameworks:** ${myData.tech_stack.frameworks_libraries.join(', ')}\n- **ML:** ${myData.tech_stack.ml.join(', ')}`;
+      return skillsText;
+    }
+    if (query.includes('project')) {
+      const projectNames = myData.projects.map((p) => p.name).join(', ');
+      return `He has built several projects, including: ${projectNames}. You can ask about a specific one!`;
+    }
+    if (query.includes('experience') || query.includes('intern')) {
+      return `Vishwas had an internship at ${myData.experience[0].company} where he worked as a ${myData.experience[0].title}.`;
+    }
+    if (query.includes('education') || query.includes('college') || query.includes('cgpa')) {
+      return `He is pursuing a ${myData.education.degree} from ${myData.education.college} with a CGPA of ${myData.education.cgpa}.`;
+    }
+    if (query.includes('contact') || query.includes('email') || query.includes('linkedin')) {
+      return `You can reach Vishwas via email at ${myData.email} or connect on GitHub at ${myData.github}.`;
+    }
+    if (query.includes('hello') || query.includes('hi')) {
+      return 'Hello there! How can I help you learn more about Vishwas?';
+    }
+
+    // Fallback message
+    return "I can answer questions about Vishwas's skills, projects, and experience. Please try asking one of those!";
   };
 
   const handleSend = () => {
@@ -67,14 +63,20 @@ const ChatBot = () => {
     const userMessage = { text: input, isUser: true };
     setMessages((prev) => [...prev, userMessage]);
 
-    // Call the new AI function instead of the static one
-    runChat(input);
+    setIsLoading(true);
+
+    // Get the response from our local function
+    setTimeout(() => {
+      const botResponseText = getStaticResponse(input);
+      const botMessage = { text: botResponseText, isUser: false };
+      setMessages((prev) => [...prev, botMessage]);
+      setIsLoading(false);
+    }, 600); // Simulate "thinking"
 
     setInput('');
   };
 
-  // --- Helper functions and JSX (mostly unchanged) ---
-
+  // --- Helper functions and JSX ---
   useEffect(() => {
     if (chatBoxRef.current) {
       chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
@@ -92,17 +94,16 @@ const ChatBot = () => {
       {isOpen && (
         <div className="w-96 h-[32rem] bg-gray-900/80 backdrop-blur-sm text-white rounded-2xl shadow-2xl flex flex-col transition-all duration-300">
           <div className="flex justify-between items-center bg-blue-600 px-4 py-3 rounded-t-2xl">
-            <h2 className="font-semibold text-lg">AI Assistant</h2>
+            <h2 className="font-semibold text-lg">Assistant</h2>
             <button onClick={() => setIsOpen(false)} className="text-white text-xl">
               ✖
             </button>
           </div>
-
           <div ref={chatBoxRef} className="flex-1 p-4 overflow-y-auto space-y-4">
             {messages.map((msg, index) => (
               <div key={index} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}>
-                <div // Use a div instead of p for better markdown compatibility
-                  className={`max-w-xs md:max-w-md lg:max-w-lg px-4 py-2 rounded-2xl prose prose-invert prose-p:my-0 prose-ul:my-0 prose-li:my-0 ${msg.isUser ? 'bg-blue-600 rounded-br-none' : 'bg-gray-700 rounded-bl-none'}`}>
+                <div
+                  className={`max-w-xs md:max-w-md lg:max-w-lg px-4 py-2 rounded-2xl prose prose-invert prose-p:my-0 prose-ul:my-0 prose-li:my-1 ${msg.isUser ? 'bg-blue-600 rounded-br-none' : 'bg-gray-700 rounded-bl-none'}`}>
                   <ReactMarkdown>{msg.text}</ReactMarkdown>
                 </div>
               </div>
@@ -119,7 +120,6 @@ const ChatBot = () => {
               </div>
             )}
           </div>
-
           <div className="p-3 border-t border-gray-700 flex items-center">
             <input
               type="text"
@@ -141,7 +141,6 @@ const ChatBot = () => {
           </div>
         </div>
       )}
-
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
