@@ -58,11 +58,11 @@ export const clientReviews = [
 
 export const myProjects = [
   {
-    title: 'Bug Buster',
-    desc: 'Bug Buster is a fast-paced web-based typing game built with React and Tailwind CSS. Players type falling words to “eliminate” bugs, earning points while avoiding misses. The game features animations, sound effects, scoring, lives, and pause/resume functionality for an engaging experience.',
+    title: 'Type Strike',
+    desc: 'Type Strike is a fast-paced, interactive web-based typing game built using React and Tailwind CSS. Players eliminate falling words by typing them accurately before they reach the bottom, earning points while managing limited lives. The game delivers a smooth and engaging experience through fluid animations, immersive sound effects, real-time score tracking, and intuitive pause/resume controls.',
     subdesc:
-      'Built with React and Tailwind CSS, it features smooth animations, score & lives tracking, pause/resume, and polished sound effects—showcasing your web dev proficiency and attention to UX.',
-    href: 'https://github.com/Vishwas-Pandey/Type-Strike',
+      'Designed with a strong focus on UI/UX and performance, Type Strike demonstrates effective state management, responsive design, and component-based architecture. The project showcases the ability to build polished, interactive web applications while paying close attention to user experience, gameplay flow, and frontend best practices.',
+    href: 'https://type-strike-eight.vercel.app/',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -85,11 +85,11 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Apple Clone – Modern UI Website',
-    desc: 'Apple Clone is a sleek, responsive web project replicating the modern look and feel of Apple’s official website. Built with React.js, Vite, and TailwindCSS, it showcases smooth layouts, elegant typography, and responsive design principles. The project emphasizes minimalism, interactivity, and performance-driven UI development.',
+    title: 'AI-HRMS – Smart Human Resource Management System',
+    desc: 'AI-HRMS is a modern web-based Human Resource Management System designed to streamline employee and administrative workflows. The platform enables efficient employee data management, role-based access, and automated HR operations through a clean and responsive interface. Built with a scalable frontend architecture, the project focuses on usability, performance, and real-world enterprise use cases.',
     subdesc:
-      'A front-end clone crafted for practice and portfolio demonstration. Perfect for showcasing web design skills and modern UI development.',
-    href: 'https://github.com/Vishwas-Pandey/Apple-Clone',
+      'A full-stack oriented HRMS project built for practical learning and portfolio demonstration, showcasing modern frontend development, API integration, and structured application design.',
+    href: 'https://hr-management-system-eta-ten.vercel.app/login',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
@@ -106,17 +106,27 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'JavaScript',
+        path: '/assets/javascript.svg',
+      },
+      {
+        id: 3,
+        name: 'Axios',
+        path: '/assets/axios.svg',
+      },
+      {
+        id: 4,
+        name: 'Tailwind CSS',
+        path: '/assets/tailwindcss.png',
       },
     ],
   },
   {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    title: 'DayMark – Productivity & Habit Tracking Web App',
+    desc: 'DayMark is a full-stack productivity web application designed to help users manage daily tasks and build consistent habits. The platform provides secure user authentication, task creation and tracking, and habit management features through a clean and intuitive interface. Built with a modern web stack, DayMark focuses on performance, usability, and real-world application architecture.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+      'A full-stack project showcasing authentication, REST API integration, and structured frontend-backend communication, built to demonstrate practical web development and system design skills.',
+    href: 'https://day-mark-ec3y.vercel.app/login',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
     logoStyle: {
@@ -135,18 +145,23 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Node.js',
+        path: '/assets/nodejs.svg',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'Express.js',
+        path: '/assets/express.svg',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'MongoDB',
+        path: '/assets/mongodb.svg',
+      },
+      {
+        id: 5,
+        name: 'JWT Authentication',
+        path: '/assets/jwt.svg',
       },
     ],
   },
@@ -167,23 +182,23 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'Python',
+        path: '/assets/python.svg',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Machine Learning',
+        path: '/assets/ml.svg',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'NLP',
+        path: '/assets/nlp.svg',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Scikit-learn',
+        path: '/assets/sklearn.svg',
       },
     ],
   },
@@ -192,7 +207,7 @@ export const myProjects = [
     desc: 'An interactive and educational tool that visually represents binary trees, allowing users to explore and understand tree structures in a dynamic way. It demonstrates key operations such as insertion, deletion, and different traversal methods with real-time animations. This visualizer is ideal for students, educators, and coding enthusiasts looking to strengthen their understanding of data structures through hands-on experience.',
     subdesc:
       'The tool allows users to input custom trees or use predefined examples, providing step-by-step visualization of how each operation affects the tree. It makes complex concepts in binary trees accessible and engaging for learners of all levels.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+    href: 'https://binary-tree-visualizer-azure.vercel.app/',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
     logoStyle: {

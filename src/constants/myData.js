@@ -108,7 +108,7 @@ export const myData = {
       name: 'Type Strike',
       description: 'A typing speed test game to improve accuracy and speed.',
       tech: ['React.js', 'JavaScript'],
-      repo: 'https://github.com/Vishwas-Pandey/Type-Strike.git',
+      repo: 'https://type-strike-eight.vercel.app/',
       live_url: '',
     },
   ],
