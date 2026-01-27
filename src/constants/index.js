@@ -107,15 +107,11 @@ export const myProjects = [
       {
         id: 2,
         name: 'JavaScript',
-        path: '/assets/javascript.svg',
+        path: '/assets/java-icon.svg',
       },
+
       {
         id: 3,
-        name: 'Axios',
-        path: '/assets/axios.svg',
-      },
-      {
-        id: 4,
         name: 'Tailwind CSS',
         path: '/assets/tailwindcss.png',
       },
@@ -158,11 +154,6 @@ export const myProjects = [
         name: 'MongoDB',
         path: '/assets/mongodb.svg',
       },
-      {
-        id: 5,
-        name: 'JWT Authentication',
-        path: '/assets/jwt.svg',
-      },
     ],
   },
   {
@@ -185,21 +176,6 @@ export const myProjects = [
         name: 'Python',
         path: '/assets/python.svg',
       },
-      {
-        id: 2,
-        name: 'Machine Learning',
-        path: '/assets/ml.svg',
-      },
-      {
-        id: 3,
-        name: 'NLP',
-        path: '/assets/nlp.svg',
-      },
-      {
-        id: 4,
-        name: 'Scikit-learn',
-        path: '/assets/sklearn.svg',
-      },
     ],
   },
   {
@@ -221,21 +197,6 @@ export const myProjects = [
         id: 1,
         name: 'React.js',
         path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
       },
     ],
   },
