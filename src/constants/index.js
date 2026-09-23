@@ -21,47 +21,12 @@ export const navLinks = [
   },
 ];
 
-export const clientReviews = [
-  {
-    id: 1,
-    name: 'Emily Johnson',
-    position: 'Marketing Director at GreenLeaf',
-    img: 'assets/review1.png',
-    review:
-      'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
-  },
-  {
-    id: 2,
-    name: 'Mark Rogers',
-    position: 'Founder of TechGear Shop',
-    img: 'assets/review2.png',
-    review:
-      'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
-  },
-  {
-    id: 3,
-    name: 'John Dohsas',
-    position: 'Project Manager at UrbanTech ',
-    img: 'assets/review3.png',
-    review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
-  },
-  {
-    id: 4,
-    name: 'Ether Smith',
-    position: 'CEO of BrightStar Enterprises',
-    img: 'assets/review4.png',
-    review:
-      'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
-  },
-];
-
 export const myProjects = [
   {
     title: 'Type Strike',
-    desc: 'Type Strike is a fast-paced, interactive web-based typing game built using React and Tailwind CSS. Players eliminate falling words by typing them accurately before they reach the bottom, earning points while managing limited lives. The game delivers a smooth and engaging experience through fluid animations, immersive sound effects, real-time score tracking, and intuitive pause/resume controls.',
+    desc: 'A browser typing game built with React and Tailwind CSS. Words fall down the screen and you clear them by typing them before they reach the bottom. You have limited lives, and there are sound effects and pause/resume.',
     subdesc:
-      'Designed with a strong focus on UI/UX and performance, Type Strike demonstrates effective state management, responsive design, and component-based architecture. The project showcases the ability to build polished, interactive web applications while paying close attention to user experience, gameplay flow, and frontend best practices.',
+      'When the game ends, the score is saved to Firebase Firestore and the top three scores are shown on a leaderboard.',
     href: 'https://type-strike-eight.vercel.app/',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
@@ -86,9 +51,9 @@ export const myProjects = [
   },
   {
     title: 'AI-HRMS – Smart Human Resource Management System',
-    desc: 'AI-HRMS is a modern web-based Human Resource Management System designed to streamline employee and administrative workflows. The platform enables efficient employee data management, role-based access, and automated HR operations through a clean and responsive interface. Built with a scalable frontend architecture, the project focuses on usability, performance, and real-world enterprise use cases.',
+    desc: 'An HR management system with a React frontend and a Node.js, Express and MongoDB backend. It has role-based access for admin, HR, manager and employee, and covers employees, payroll, attendance and performance reviews.',
     subdesc:
-      'A full-stack oriented HRMS project built for practical learning and portfolio demonstration, showcasing modern frontend development, API integration, and structured application design.',
+      'JWT auth with route-level role checks. The AI features (resume screening, review sentiment, an HR chatbot) call the Gemini API.',
     href: 'https://hr-management-system-eta-ten.vercel.app/login',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
@@ -119,9 +84,9 @@ export const myProjects = [
   },
   {
     title: 'DayMark – Productivity & Habit Tracking Web App',
-    desc: 'DayMark is a full-stack productivity web application designed to help users manage daily tasks and build consistent habits. The platform provides secure user authentication, task creation and tracking, and habit management features through a clean and intuitive interface. Built with a modern web stack, DayMark focuses on performance, usability, and real-world application architecture.',
+    desc: 'A full-stack productivity app for tasks, habits with streaks, goals, a calendar, a journal and analytics. It also has an AI chat that sees a summary of your open tasks and habits. Built with React, Express 5 and MongoDB.',
     subdesc:
-      'A full-stack project showcasing authentication, REST API integration, and structured frontend-backend communication, built to demonstrate practical web development and system design skills.',
+      'JWT access tokens with rotating httpOnly refresh cookies, Zod request validation, and per-user data isolation. There is an API test suite (Vitest, Supertest, in-memory MongoDB) that runs in GitHub Actions.',
     href: 'https://day-mark-ec3y.vercel.app/login',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
@@ -158,9 +123,9 @@ export const myProjects = [
   },
   {
     title: 'hate Speech Detection',
-    desc: 'A machine learning model designed to automatically detect and classify hate speech in text data. It helps identify offensive, abusive, or harmful content across social media platforms and online forums. The model leverages natural language processing techniques for accurate content moderation.',
+    desc: 'A Jupyter notebook that trains a text classifier to label tweets as hate speech, offensive language, or neither.',
     subdesc:
-      'Built using Python and popular ML libraries, the model preprocesses text, extracts features, and classifies messages into hate speech or safe content. It can be integrated into web apps or social media tools for real-time moderation.',
+      'Built with Python, NLTK and scikit-learn: text cleaning and lemmatization, bag-of-words features (CountVectorizer), and a comparison of a decision tree against logistic regression using accuracy, classification reports and confusion matrices.',
     href: 'https://github.com/Vishwas-Pandey/Hate-Speech-Detection',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
@@ -180,9 +145,9 @@ export const myProjects = [
   },
   {
     title: 'Binary Tree Visualizer',
-    desc: 'An interactive and educational tool that visually represents binary trees, allowing users to explore and understand tree structures in a dynamic way. It demonstrates key operations such as insertion, deletion, and different traversal methods with real-time animations. This visualizer is ideal for students, educators, and coding enthusiasts looking to strengthen their understanding of data structures through hands-on experience.',
+    desc: 'A React app for building a binary tree node by node and watching the four traversals (inorder, preorder, postorder, level order) animate one step at a time.',
     subdesc:
-      'The tool allows users to input custom trees or use predefined examples, providing step-by-step visualization of how each operation affects the tree. It makes complex concepts in binary trees accessible and engaging for learners of all levels.',
+      'You can pause and restart a traversal and edit node values as you go.',
     href: 'https://binary-tree-visualizer-azure.vercel.app/',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
