@@ -18,10 +18,6 @@ const ChatBot = () => {
     const query = userInput.toLowerCase();
 
     // Specific Project Checks (Now includes tech stack in the response)
-    if (query.includes('color dash') || query.includes('reaction game')) {
-      const project = myData.projects.find((p) => p.id === 'color-dash');
-      return `${project.description}\n\n**Tech used:** ${project.tech.join(', ')}`;
-    }
     if (query.includes('hate speech')) {
       const project = myData.projects.find((p) => p.id === 'hate-speech-detection');
       return `${project.description}\n\n**Tech used:** ${project.tech.join(', ')}`;
